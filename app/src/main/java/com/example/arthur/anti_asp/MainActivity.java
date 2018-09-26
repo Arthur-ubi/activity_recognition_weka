@@ -55,6 +55,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        verifyStoragePermissions(this);//内部ストレージのパーミッション要求
         setContentView(R.layout.activity_main);
 
         values = (TextView)findViewById(R.id.text_view);
