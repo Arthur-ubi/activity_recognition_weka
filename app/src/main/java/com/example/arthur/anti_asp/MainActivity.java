@@ -61,6 +61,13 @@ public class MainActivity extends Activity implements SensorEventListener {
         manager = (SensorManager)getSystemService(SENSOR_SERVICE);
         status = (TextView)findViewById(R.id.status_view);
         status.setText("待機中");
+        
+        //データディレクトリ作成
+        File dir = new File("/storage/emulated/0/anti_asp/");
+        if(!dir.exists()){
+            dir.mkdir();
+            Toast.makeText(this, "データ保存ディレクトリを\n作成しました", Toast.LENGTH_SHORT).show();
+        }
 
     //サンプリングボタン
         //立ち状態
